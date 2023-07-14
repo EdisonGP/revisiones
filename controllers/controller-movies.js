@@ -2,7 +2,7 @@ const {db}=require("../cnn")
 
 //actores
 const consultarActores =async(req,res)=>{
-    const response=await db.any("select * from revision a order by a.rc_id_control asc;");
+    const response=await db.any("select rc_id_control,rc_tiene_rotulo from revision a order by a.rc_id_control desc;");
     res.json(response);
 }
 
